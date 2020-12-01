@@ -1,5 +1,6 @@
+
 def input_data():
-    input_file = open("input.txt", 'r')
+    input_file = open("Advent2020/day1_input.txt", 'r')
     input_list = []
     for number in input_file:
         input_list.append(int(number))
