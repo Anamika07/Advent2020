@@ -1,4 +1,4 @@
-def input():
+def input_data():
     input_file = open("input.txt", 'r')
     input_list = []
     for number in input_file:
@@ -7,31 +7,26 @@ def input():
 
 
 def puzzle1():
-    input_list = input()
-    for item in input_list:
-        for item1 in input_list:
-            a = item
-            b = item1
+    input_list = input_data()
+    for a in input_list:
+        for b in input_list:
             if a != b and a + b == 2020:
-                return a * b
+                return f"Answer for puzzle one {a * b}"
             else:
                 continue
 
 
 def puzzle2():
-    input_list = input()
-    for item in input_list:
-        for item1 in input_list:
-            a = item
-            b = item1
+    input_list = input_data()
+    for a in input_list:
+        for b in input_list:
             if a != b and a + b != 2020:
-                for item2 in input_list:
-                    c = item2
-                    if c != a and c !=b and a + b + c ==2020:
-                        return a*b*c
+                for c in input_list:
+                    if c != a and c != b and a + b + c == 2020:
+                        return f"Answer for puzzle one {a * b * c}"
             else:
                 continue
 
 
-print(puzzle1())
-print(puzzle2())
+print(f"Solution for 1st part: {puzzle1()}")
+print(f"Solution for 2nd part: {puzzle2()}")
