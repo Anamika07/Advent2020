@@ -1,10 +1,10 @@
 
 def input_data():
-    input_file = open("Advent2020/Day1/day1_input.txt", 'r')
-    input_list = []
-    for number in input_file:
-        input_list.append(int(number))
-    return input_list
+    with open("Advent2020/Day1/day1_input.txt", 'r') as input_file:
+        input_list = []
+        for number in input_file:
+            input_list.append(int(number))
+        return input_list
 
 
 def puzzle1():
