@@ -28,5 +28,5 @@ def puzzle2():
                 continue
 
 
-print(f"Solution for 1st part: {puzzle1()}")
-print(f"Solution for 2nd part: {puzzle2()}")
+print(puzzle1())
+print(puzzle2())
