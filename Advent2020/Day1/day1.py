@@ -12,7 +12,7 @@ def puzzle1():
     for a in input_list:
         for b in input_list:
             if a != b and a + b == 2020:
-                return f"Answer for puzzle one {a * b}"
+                return f"Answer for puzzle one: {a * b}"
             else:
                 continue
 
@@ -24,7 +24,7 @@ def puzzle2():
             if a != b and a + b != 2020:
                 for c in input_list:
                     if c != a and c != b and a + b + c == 2020:
-                        return f"Answer for puzzle one {a * b * c}"
+                        return f"Answer for puzzle two: {a * b * c}"
             else:
                 continue
 
