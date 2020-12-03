@@ -7,8 +7,8 @@ def input_data():
 
 
 def is_tree(coordinates, map_):
-    col_l = len(map_[coordinates[0]])
-    coordinates_of = map_[coordinates[0]][coordinates[1] % col_l]
+    num_of_columns = len(map_[coordinates[0]])
+    coordinates_of = map_[coordinates[0]][coordinates[1] % num_of_columns]
     return coordinates_of == '#'
 
 
