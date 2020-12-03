@@ -6,14 +6,9 @@ def input_data():
     return rows
 
 
-def check_coordinates(row_num, col_num, map_):
-    col_l = len(map_[row_num])
-    coordinates_of = map_[row_num][col_num % col_l]
-    return coordinates_of
-
-
 def is_tree(coordinates, map_):
-    coordinates_of = check_coordinates(coordinates[0], coordinates[1], map_)
+    col_l = len(map_[coordinates[0]])
+    coordinates_of = map_[coordinates[0]][coordinates[1] % col_l]
     return coordinates_of == '#'
 
 
@@ -24,7 +19,6 @@ def count_trees(move, coordinates, map_):
         coordinates = (coordinates[0] + move[0], coordinates[1] + move[1])
         if is_tree(coordinates, map_):
             trees = trees + 1
-            # print(trees)
     return trees
 
 
