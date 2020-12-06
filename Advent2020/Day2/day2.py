@@ -1,4 +1,3 @@
-
 def input_data():
     with open("day2_input.txt", 'r') as input_file:
         input_list = []
@@ -21,7 +20,6 @@ def puzzle1():
         char_limit = item[2]
         lower_limit = int(char_limit[0])
         upper_limit = int(char_limit[1])
-        # print(password, char_check, lower_limit, upper_limit)
         count = password.count(char_check)
         if lower_limit <= count <= upper_limit:
             num_of_valid_pass = num_of_valid_pass + 1
@@ -40,9 +38,8 @@ def puzzle2():
         try:
             character_ll = password[lower_limit - 1]
             character_ul = password[upper_limit - 1]
-            if character_ll == char_check or character_ul == char_check:
-                if character_ll != character_ul:
-                    num_of_valid_pass = num_of_valid_pass + 1
+            if (character_ll == char_check) ^ (character_ul == char_check):
+                num_of_valid_pass = num_of_valid_pass + 1
         except:
             print("one of the character was Out of bound")
     return num_of_valid_pass
@@ -50,3 +47,4 @@ def puzzle2():
 
 print(f"Solution for Puzzle 1: {puzzle1()}")
 print(f"Solution for Puzzle 2: {puzzle2()}")
+

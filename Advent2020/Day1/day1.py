@@ -1,3 +1,5 @@
+import itertools, math
+
 
 def input_data():
     with open("Advent2020/Day1/day1_input.txt", 'r') as input_file:
@@ -7,23 +9,13 @@ def input_data():
         return input_list
 
 
-def puzzle1():
+def puzzle(n):
     input_list = input_data()
-    for a in input_list:
-        for b in input_list:
-            if a != b and a + b == 2020:
-                return f"Answer for puzzle one: {a * b}"
+    for num in itertools.combinations(input_list, n):
+        if sum(num) == 2020:
+            return math.prod(num)
 
 
-def puzzle2():
-    input_list = input_data()
-    for a in input_list:
-        for b in input_list:
-            if a != b and a + b != 2020:
-                for c in input_list:
-                    if c != a and c != b and a + b + c == 2020:
-                        return f"Answer for puzzle two: {a * b * c}"
-
-
-print(puzzle1())
-print(puzzle2())
+if __name__ == '__main__':
+    print(f"Answer for puzzle 1: {puzzle(2)}")
+    print(f"Answer for puzzle 2: {puzzle(3)}")
