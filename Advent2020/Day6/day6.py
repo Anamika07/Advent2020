@@ -15,26 +15,21 @@ def input_data():
     return data
 
 
-def puzzle1():
-    onboarding_data = input_data()
+def puzzle1(onboarding_data):
     sum_ = 0
     for group in onboarding_data:
-        answers = set.union(*group)
-        answer_count = len(answers)
-        sum_ = sum_ + answer_count
+        sum_ = sum_ + len(set.union(*group))
     return sum_
 
 
-def puzzle2():
-    onboarding_data = input_data()
+def puzzle2(onboarding_data):
     sum_ = 0
     for group in onboarding_data:
-        answers = set.intersection(*group)
-        answer_count = len(answers)
-        sum_ = sum_ + answer_count
+        sum_ = sum_ + len(set.intersection(*group))
     return sum_
 
 
 if __name__ == '__main__':
-    print('Solution of puzzle 1 is', puzzle1())
-    print('Solution of puzzle 2 is', puzzle2())
+    onboarding_data = input_data()
+    print('Solution of puzzle 1 is', puzzle1(onboarding_data))
+    print('Solution of puzzle 2 is', puzzle2(onboarding_data))
