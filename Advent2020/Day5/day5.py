@@ -49,6 +49,8 @@ def get_seat_info():
     return seats
 
 
+// why find_your_seat() is needed ? Could max be used ? 
+
 def find_your_seat():
     a = sorted(get_seat_info())
     for seat in range(a[0], a[-1]+1):
